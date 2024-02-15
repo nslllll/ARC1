@@ -18,18 +18,19 @@ struct ARViewContainer:  UIViewRepresentable{
     func makeUIView(context: Context) -> some UIView {
         let arView = ARView(frame: .zero)
         
+        let clothes = try! Experience.loadBox()
+        
         return arView
     }
     func updateUIView(_ uiView: UIViewType, context: Context) {
         
     }
-}
-
-
-struct ContentView_Previews : PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    
+    struct ContentView_Previews : PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
 }
-
 

@@ -15,7 +15,7 @@
 		8506DD0C2B678F0700240BA1 /* ARC1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8506DD0B2B678F0700240BA1 /* ARC1Tests.swift */; };
 		8506DD162B678F0700240BA1 /* ARC1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8506DD152B678F0700240BA1 /* ARC1UITests.swift */; };
 		8506DD182B678F0700240BA1 /* ARC1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8506DD172B678F0700240BA1 /* ARC1UITestsLaunchTests.swift */; };
-		8506DD252B67997600240BA1 /* MyScene.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 8506DD242B67997600240BA1 /* MyScene.rcproject */; };
+		854DD7F12B7E943300C16B93 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DD7F02B7E943300C16B93 /* Setting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		8506DD112B678F0700240BA1 /* ARC1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARC1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8506DD152B678F0700240BA1 /* ARC1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARC1UITests.swift; sourceTree = "<group>"; };
 		8506DD172B678F0700240BA1 /* ARC1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARC1UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8506DD242B67997600240BA1 /* MyScene.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = MyScene.rcproject; sourceTree = "<group>"; };
+		854DD7F02B7E943300C16B93 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,10 +100,10 @@
 			children = (
 				8506DCF82B678F0600240BA1 /* AppDelegate.swift */,
 				8506DCFA2B678F0600240BA1 /* ContentView.swift */,
-				8506DD242B67997600240BA1 /* MyScene.rcproject */,
 				8506DCFC2B678F0600240BA1 /* Experience.rcproject */,
 				8506DCFE2B678F0700240BA1 /* Assets.xcassets */,
 				8506DD002B678F0700240BA1 /* Preview Content */,
+				854DD7F02B7E943300C16B93 /* Setting.swift */,
 			);
 			path = ARC1;
 			sourceTree = "<group>";
@@ -265,8 +265,8 @@
 			files = (
 				8506DCFB2B678F0600240BA1 /* ContentView.swift in Sources */,
 				8506DCF92B678F0600240BA1 /* AppDelegate.swift in Sources */,
+				854DD7F12B7E943300C16B93 /* Setting.swift in Sources */,
 				8506DCFD2B678F0600240BA1 /* Experience.rcproject in Sources */,
-				8506DD252B67997600240BA1 /* MyScene.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
