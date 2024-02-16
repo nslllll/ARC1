@@ -1,10 +1,3 @@
-//
-//  login.swift
-//  ARC1
-//
-//  Created by Ng Sui Lam on 16/2/2024.
-//
-
 import SwiftUI
 import LocalAuthentication
 
@@ -15,6 +8,7 @@ struct login: View {
     @State private var wrongPassword = 0
     @State private var showingLoginScreen = false
     @State private var showingAlert = false
+    @StateObject var model = BiometricModel()
     
     var body: some View {
         NavigationView {
@@ -45,17 +39,43 @@ struct login: View {
                         .cornerRadius(10)
                         .border(Color.red, width: CGFloat(wrongPassword))
                     
-                    Button("Login") {
-                        authenticateUser(username: username, password: password)
+                   
+                    NavigationLink(destination: Home(), isActive: $showingLoginScreen) {
+                        Text("Login")
                     }
                     .foregroundColor(.white)
-                    .frame(width: 300, height: 50)
-                    .background(Color.green)
-                    .cornerRadius(10)
-                    
-                    NavigationLink(destination: Home(), isActive: $showingLoginScreen) {
+                        .frame(width: 300, height: 50)
+                        .background(Color.green)
+                        .cornerRadius(10)
+
+                    Button(action: {
+                        model.evaluatePolicy()
+                    }, label: {
+                        Image(systemName: "faceid")
+                            .resizable()
+                            .foregroundColor(.green)
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(10)
+                            .padding( )
+                            
+                    })
+                
+                    if model.isError == true {
+                        Text("\(model.errorMessage)")
                     }
+                    Button("Forgot Passowrd?"){}
+                                    .font(.callout)
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(.green)
+                    HStack(spacing: 6){
+                    Text("Don't have an account?")
+                            .foregroundStyle(.gray)
+                    Button("SignUp"){}
+                            .foregroundColor(.green)
+                                    }
+                    .padding( )
                 }
+                
             }
         }
         .navigationBarHidden(true)
@@ -68,27 +88,7 @@ struct login: View {
         }
     }
     
-    func authenticateUser(username: String, password: String) {
-        let context = LAContext()
-        var error: NSError?
-        
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Please authorize with Face ID or Touch ID"
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
-                DispatchQueue.main.async {
-                    if success {
-                        showingLoginScreen = true
-                    } else {
-                        showingAlert = true
-                    }
-                }
-            }
-        } else {
-            showingAlert = true
-        }
-    }
 }
-
 struct Home: View {
     var body: some View {
         VStack {
@@ -100,4 +100,4 @@ struct login_Previews: PreviewProvider {
     static var previews: some View {
         login()
     }
-}	
+}
