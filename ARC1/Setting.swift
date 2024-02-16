@@ -23,9 +23,7 @@ struct Setting: View {
                         Spacer()
                         Text("Logout")
                     NavigationLink(destination: login()) {
-                    login()
-                    }.toolbar(.hidden, for: .tabBar)
-                            
+                    }                            
                         Spacer()
                      }
                         .foregroundColor(.red)
@@ -48,6 +46,6 @@ struct Setting: View {
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView()
+            Setting()
         }
     }

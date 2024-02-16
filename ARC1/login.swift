@@ -1,3 +1,9 @@
+//
+//  login.swift
+//  ARC1
+//
+//  Created by Ng Sui Lam on 16/1/2024.
+//
 import SwiftUI
 import LocalAuthentication
 
@@ -40,13 +46,14 @@ struct login: View {
                         .border(Color.red, width: CGFloat(wrongPassword))
                     
                    
-                    NavigationLink(destination: Home(), isActive: $showingLoginScreen) {
+                    NavigationLink(destination: home(), isActive: $showingLoginScreen) {
                         Text("Login")
                     }
                     .foregroundColor(.white)
                         .frame(width: 300, height: 50)
                         .background(Color.green)
                         .cornerRadius(10)
+    
 
                     Button(action: {
                         model.evaluatePolicy()
@@ -85,7 +92,8 @@ struct login: View {
                 message: Text("Please try again."),
                 dismissButton: .cancel()
             )
-        }
+            
+        }.toolbar(.hidden, for: .tabBar)
     }
     
 }

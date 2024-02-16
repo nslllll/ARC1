@@ -17,18 +17,14 @@ struct home: View {
                     Text("Create")
                     }.tag(1)
             }
-            Drawing().tabItem({
-                Image(systemName: "pencil.line")
-                            Text("Drawing")
-                        }).tag(2)
             location().tabItem({
                             Image(systemName: "location.circle")
                             Text("Location")
-                        }).tag(3)
+                        }).tag(2)
             Setting().tabItem({
                             Image(systemName: "gearshape.fill")
                             Text("Settings")
-                        }).tag(4)
+                        }).tag(3)
         }
         .toolbar(.visible, for: .tabBar)
     }
