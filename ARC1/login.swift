@@ -9,13 +9,15 @@ import SwiftUI
 import LocalAuthentication
 
 struct login: View {
-    @State private var username : String = ""
-    @State private var password : String = ""
+    @State private var username: String = ""
+    @State private var password: String = ""
     @State private var wrongUsername = 0
     @State private var wrongPassword = 0
     @State private var showingLoginScreen = false
+    @State private var showingAlert = false
+    
     var body: some View {
-        NavigationView{
+        NavigationView {
             ZStack {
                 Color.green.ignoresSafeArea()
                 Circle()
@@ -24,7 +26,7 @@ struct login: View {
                 Circle()
                     .scale(1.2)
                     .foregroundColor(.white)
-                VStack{
+                VStack {
                     Text("Clothing Design")
                         .font(.largeTitle)
                         .bold()
@@ -34,67 +36,74 @@ struct login: View {
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
-                        .border(.red, width: CGFloat(wrongUsername))
+                        .border(Color.red, width: CGFloat(wrongUsername))
                     
                     SecureField("Password", text: $password)
                         .padding()
-                        .frame(width:300, height: 50)
+                        .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
-                        .border(.red, width: CGFloat(wrongPassword))
-                    Button("Login"){
-                        autherticateUser(username: username, password: password)
-                        button.addTarget(self, action: #selector(TapButton))
+                        .border(Color.red, width: CGFloat(wrongPassword))
+                    
+                    Button("Login") {
+                        authenticateUser(username: username, password: password)
                     }
-                   
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
                     .background(Color.green)
                     .cornerRadius(10)
                     
-                    NavigationLink(destination: home(), isActive: $showingLoginScreen){
+                    NavigationLink(destination: Home(), isActive: $showingLoginScreen) {
                         EmptyView()
-                        }
-                    }
                     }
                 }
+            }
+        }
         .navigationBarHidden(true)
-        }
-    func autherticateUser(username:  String, password: String){
-        if username.lowercased() == "asd123"{
-            wrongUsername = 0
-            if password.lowercased() ==  "abc123"{
-                wrongPassword = 0
-                showingLoginScreen = true
-            }else {
-                wrongPassword = 2
-            }
-        }else{
-            wrongUsername = 2
-        }
-        }
-    func TapButton(){
-        let context = LAContext()
-        var error: NSError? = nil
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,error: &error){
-            let reason = "Please authorize with touchID"
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,localizedReason: reason){[weak self] success, error in
-                guard succes, error == nill else{
-                    return
-                }
-                
-            }
-            
-        }
-        else{
-            
+        .alert(isPresented: $showingAlert) {
+            Alert(
+                title: Text("Failed to Authenticate"),
+                message: Text("Please try again."),
+                dismissButton: .cancel()
+            )
         }
     }
-    }
-        
     
+    func authenticateUser(username: String, password: String) {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Please authorize with Face ID or Touch ID"
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
+                DispatchQueue.main.async {
+                    if success {
+                        showingLoginScreen = true
+                    } else {
+                        showingAlert = true
+                    }
+                }
+            }
+        } else {
+            showingAlert = true
+        }
+    }
+}
+
+struct Home: View {
+    var body: some View {
+        VStack {
+            Text("Welcome!")
+                .font(.largeTitle)
+                .bold()
+                .padding()
+            Spacer()
+        }
+    }
+}
+
 struct login_Previews: PreviewProvider {
     static var previews: some View {
         login()
     }
-}
+}	

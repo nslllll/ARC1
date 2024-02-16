@@ -25,12 +25,11 @@ struct ARViewContainer:  UIViewRepresentable{
     func updateUIView(_ uiView: UIViewType, context: Context) {
         
     }
-    
-    
-    struct ContentView_Previews : PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
-    }
 }
 
+
+struct contentView_Previews : PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
