@@ -16,6 +16,10 @@
 		8506DD162B678F0700240BA1 /* ARC1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8506DD152B678F0700240BA1 /* ARC1UITests.swift */; };
 		8506DD182B678F0700240BA1 /* ARC1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8506DD172B678F0700240BA1 /* ARC1UITestsLaunchTests.swift */; };
 		854DD7F12B7E943300C16B93 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DD7F02B7E943300C16B93 /* Setting.swift */; };
+		854DD7F32B7E967600C16B93 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DD7F22B7E967600C16B93 /* login.swift */; };
+		854DD7F52B7E96A400C16B93 /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DD7F42B7E96A400C16B93 /* home.swift */; };
+		854DD7F92B7E96EA00C16B93 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DD7F82B7E96EA00C16B93 /* LocationModel.swift */; };
+		854DD7FB2B7E972900C16B93 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DD7FA2B7E972900C16B93 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,11 @@
 		8506DD152B678F0700240BA1 /* ARC1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARC1UITests.swift; sourceTree = "<group>"; };
 		8506DD172B678F0700240BA1 /* ARC1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARC1UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		854DD7F02B7E943300C16B93 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		854DD7F22B7E967600C16B93 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
+		854DD7F42B7E96A400C16B93 /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
+		854DD7F82B7E96EA00C16B93 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		854DD7FA2B7E972900C16B93 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		854DD7FC2B7E986800C16B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +107,17 @@
 		8506DCF72B678F0600240BA1 /* ARC1 */ = {
 			isa = PBXGroup;
 			children = (
+				854DD7FC2B7E986800C16B93 /* Info.plist */,
 				8506DCF82B678F0600240BA1 /* AppDelegate.swift */,
 				8506DCFA2B678F0600240BA1 /* ContentView.swift */,
 				8506DCFC2B678F0600240BA1 /* Experience.rcproject */,
 				8506DCFE2B678F0700240BA1 /* Assets.xcassets */,
 				8506DD002B678F0700240BA1 /* Preview Content */,
 				854DD7F02B7E943300C16B93 /* Setting.swift */,
+				854DD7F22B7E967600C16B93 /* login.swift */,
+				854DD7F42B7E96A400C16B93 /* home.swift */,
+				854DD7F82B7E96EA00C16B93 /* LocationModel.swift */,
+				854DD7FA2B7E972900C16B93 /* Location.swift */,
 			);
 			path = ARC1;
 			sourceTree = "<group>";
@@ -263,7 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				854DD7F92B7E96EA00C16B93 /* LocationModel.swift in Sources */,
+				854DD7F52B7E96A400C16B93 /* home.swift in Sources */,
+				854DD7FB2B7E972900C16B93 /* Location.swift in Sources */,
 				8506DCFB2B678F0600240BA1 /* ContentView.swift in Sources */,
+				854DD7F32B7E967600C16B93 /* login.swift in Sources */,
 				8506DCF92B678F0600240BA1 /* AppDelegate.swift in Sources */,
 				854DD7F12B7E943300C16B93 /* Setting.swift in Sources */,
 				8506DCFD2B678F0600240BA1 /* Experience.rcproject in Sources */,
@@ -427,8 +445,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ARC1/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ARC1/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -458,8 +480,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ARC1/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ARC1/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
