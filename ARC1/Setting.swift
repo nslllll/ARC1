@@ -22,6 +22,10 @@ struct Setting: View {
                         HStack {
                         Spacer()
                         Text("Logout")
+                    NavigationLink(destination: login()) {
+                    login()
+                    }.toolbar(.hidden, for: .tabBar)
+                            
                         Spacer()
                      }
                         .foregroundColor(.red)

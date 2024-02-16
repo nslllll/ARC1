@@ -54,7 +54,6 @@ struct login: View {
                     .cornerRadius(10)
                     
                     NavigationLink(destination: Home(), isActive: $showingLoginScreen) {
-                        EmptyView()
                     }
                 }
             }
@@ -93,11 +92,6 @@ struct login: View {
 struct Home: View {
     var body: some View {
         VStack {
-            Text("Welcome!")
-                .font(.largeTitle)
-                .bold()
-                .padding()
-            Spacer()
         }
     }
 }

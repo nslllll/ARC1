@@ -13,11 +13,11 @@ struct home: View {
 
             ContentView().tabItem{
                 NavigationLink(destination: ContentView()){
-                    Image(systemName: "hanger")
-                    
-                }.tag(1)
+                Image(systemName: "doc.badge.plus")
+                    Text("Create")
+                    }.tag(1)
             }
-            location().tabItem({
+            Drawing().tabItem({
                 Image(systemName: "pencil.line")
                             Text("Drawing")
                         }).tag(2)
@@ -25,7 +25,7 @@ struct home: View {
                             Image(systemName: "location.circle")
                             Text("Location")
                         }).tag(3)
-            location().tabItem({
+            Setting().tabItem({
                             Image(systemName: "gearshape.fill")
                             Text("Settings")
                         }).tag(4)

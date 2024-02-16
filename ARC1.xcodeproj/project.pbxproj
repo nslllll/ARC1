@@ -20,6 +20,7 @@
 		854DD7F52B7E96A400C16B93 /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DD7F42B7E96A400C16B93 /* home.swift */; };
 		854DD7F92B7E96EA00C16B93 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DD7F82B7E96EA00C16B93 /* LocationModel.swift */; };
 		854DD7FB2B7E972900C16B93 /* location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DD7FA2B7E972900C16B93 /* location.swift */; };
+		8560C4462B7FA514000640CD /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8560C4452B7FA514000640CD /* Drawing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		854DD7F82B7E96EA00C16B93 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		854DD7FA2B7E972900C16B93 /* location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location.swift; sourceTree = "<group>"; };
 		854DD7FC2B7E986800C16B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8560C4452B7FA514000640CD /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				854DD7F42B7E96A400C16B93 /* home.swift */,
 				854DD7F82B7E96EA00C16B93 /* LocationModel.swift */,
 				854DD7FA2B7E972900C16B93 /* location.swift */,
+				8560C4452B7FA514000640CD /* Drawing.swift */,
 			);
 			path = ARC1;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				854DD7FB2B7E972900C16B93 /* location.swift in Sources */,
 				8506DCFB2B678F0600240BA1 /* ContentView.swift in Sources */,
 				854DD7F32B7E967600C16B93 /* login.swift in Sources */,
+				8560C4462B7FA514000640CD /* Drawing.swift in Sources */,
 				8506DCF92B678F0600240BA1 /* AppDelegate.swift in Sources */,
 				854DD7F12B7E943300C16B93 /* Setting.swift in Sources */,
 				8506DCFD2B678F0600240BA1 /* Experience.rcproject in Sources */,
