@@ -20,10 +20,10 @@ struct Shop: Identifiable {
 struct location : View {
     
     let annotations = [
-        Shop(name: "London", coordinate: CLLocationCoordinate2D(latitude: 22.31001626873344, longitude: 114.22756546042852)),
-        Shop(name: "Paris", coordinate: CLLocationCoordinate2D(latitude: 22.309400873274026, longitude: 114.2252051166032)),
-        Shop(name: "Rome", coordinate: CLLocationCoordinate2D(latitude: 22.35858079078863, longitude: 114.13168611675623)),
-        Shop(name: "Washington DC", coordinate: CLLocationCoordinate2D(latitude: 22.308943719105212, longitude: 114.1888534707294))
+        Shop(name: "印衫易 Print32hk", coordinate: CLLocationCoordinate2D(latitude: 22.308844440789912, longitude: 114.18885346859264)),
+        Shop(name: "uLabel", coordinate: CLLocationCoordinate2D(latitude: 22.30902044697339, longitude: 114.22347335694833)),
+        Shop(name: "TT Printing 至尊印衫", coordinate: CLLocationCoordinate2D(latitude: 22.358322791464875, longitude: 114.13244786194592)),
+        Shop(name: "炬意製品", coordinate: CLLocationCoordinate2D(latitude: 22.311622445358783, longitude: 114.22702247229074))
     ]
 
     @StateObject var locationModel = LocationModel()
