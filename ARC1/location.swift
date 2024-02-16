@@ -28,7 +28,7 @@ struct location : View {
 
     @StateObject var locationModel = LocationModel()
     @State var coordinateRegion : MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
-                                                                          span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     
     var body: some View {
@@ -52,8 +52,6 @@ struct location : View {
         .padding()
     }
 }
-
-
 
 struct location_Previews : PreviewProvider {
     static var previews: some View {

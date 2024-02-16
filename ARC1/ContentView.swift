@@ -8,7 +8,6 @@
 import SwiftUI
 import RealityKit
 
-
 struct ContentView : View {
     var body: some View {
         ARViewContainer().edgesIgnoringSafeArea(.all)
@@ -26,8 +25,6 @@ struct ARViewContainer:  UIViewRepresentable{
         
     }
 }
-
-
 struct contentView_Previews : PreviewProvider {
     static var previews: some View {
         ContentView()
